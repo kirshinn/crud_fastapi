@@ -1,7 +1,8 @@
 from fastapi import FastAPI
-from database import SessionLocal, engine, Base
-from routers import user as UserRouter
 import uvicorn
+
+from app.database import SessionLocal, engine, Base
+from app.routers import user as UserRouter
 
 # Создание всех таблиц в базе данных
 Base.metadata.create_all(bind=engine)
